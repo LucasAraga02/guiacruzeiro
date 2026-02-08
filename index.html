@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Definitivo para Viagens de Cruzeiros | Lucas Aragão</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0e1a;
+            color: #e8eaf0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f1623 0%, #1a2744 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid #2a3f5f;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1e3a5f;
+            color: #00d4ff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 255, 163, 0.3);
+        }
+
+        .highlight {
+            color: #00ffa3;
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #b8c5d6;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Price Box */
+        .price-box {
+            background: #151d2e;
+            border: 2px solid #2a3f5f;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: #7a8599;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .price-discount {
+            font-size: 1.4rem;
+            color: #00d4ff;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .coupon-code {
+            background: #1e3a5f;
+            color: #00ffa3;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: inline-block;
+            margin: 15px 0;
+            letter-spacing: 2px;
+        }
+
+        .price-final {
+            font-size: 2.2rem;
+            color: #00ffa3;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffa3 0%, #00d4ff 100%);
+            color: #0a0e1a;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 163, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #1a2744;
+        }
+
+        .section-dark {
+            background: #0d1219;
+        }
+
+        .section-light {
+            background: #0f1623;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        /* For Who Section */
+        .for-who-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .for-who-list li {
+            background: #151d2e;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00ffa3;
+            border-radius: 8px;
+            list-style: none;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .content-card {
+            background: #151d2e;
+            border: 1px solid #2a3f5f;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .content-card h3 {
+            margin-top: 0;
+        }
+
+        .content-card p {
+            color: #b8c5d6;
+            line-height: 1.7;
+        }
+
+        /* Comparison */
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .comparison-col {
+            background: #151d2e;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .comparison-col h3 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .comparison-col.without {
+            border: 2px solid #ff4757;
+        }
+
+        .comparison-col.with {
+            border: 2px solid #00ffa3;
+        }
+
+        .comparison-col ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .comparison-col ul li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .comparison-col.without ul li:before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #ff4757;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .comparison-col.with ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00ffa3;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #151d2e;
+            border-left: 4px solid #00d4ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .faq-item strong {
+            display: block;
+            color: #00d4ff;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: #b8c5d6;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0f1623 0%, #1a2744 100%);
+        }
+
+        .cta-final h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            color: #b8c5d6;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Guarantee Badge */
+        .guarantee {
+            background: #1e3a5f;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .guarantee h4 {
+            color: #00ffa3;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="container">
+            <span class="badge">📘 Guia Digital em PDF • +500 pessoas já garantiram</span>
+            <h1>O Único Guia que Você Precisa para Fazer seu <span class="highlight">Cruzeiro dos Sonhos</span> sem Medo, Erro ou Perrengue</h1>
+            <p class="hero-subtitle">
+                <strong>Imagine embarcar 100% seguro:</strong> sabendo exatamente quais documentos levar, quanto vai gastar, 
+                como evitar enjoos, qual cabine escolher e como aproveitar CADA dia a bordo. 
+                Tudo isso em um único PDF completo. ⚡
+            </p>
+
+            <div class="price-box">
+                <p class="price-original">De R$ 97,90</p>
+                <p class="price-discount">🔥 OFERTA RELÂMPAGO: 60% OFF aplicando o cupom</p>
+                <div class="coupon-code">ARAGAOLS</div>
+                <p class="price-final">12x de R$ 3,85 ou R$ 39,16 à vista</p>
+                <p style="color: #ff4757; font-weight: 600; font-size: 0.9rem;">⏰ Desconto válido apenas para as próximas 24 horas</p>
+                <p style="color: #7a8599; font-size: 0.95rem;">✅ Acesso imediato ao PDF após confirmação do pagamento</p>
+                <a href="https://pay.kiwify.com.br/IeLX3lp" class="btn-primary">✅ SIM! QUERO GARANTIR MEU DESCONTO AGORA</a>
+                <p style="color: #00ffa3; font-size: 0.85rem; margin-top: 15px;">🔒 Acesso IMEDIATO após a compra • Cupom aplicado automaticamente</p>
+                <p style="color: #7a8599; font-size: 0.8rem; margin-top: 8px;">💳 Parcele em até 12x ou ganhe desconto extra no PIX</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARA QUEM É -->
+    <div class="section section-dark">
+        <div class="container">
+            <h2>⚠️ Este guia NÃO é para todo mundo</h2>
+        <p style="text-align: center; color: #b8c5d6; max-width: 600px; margin: 0 auto 30px; font-size: 1.1rem;">
+            É para você que não quer descobrir na hora do embarque que esqueceu um documento ou que vai pagar 3x mais caro por não saber o que está incluído.
+        </p>
+            <ul class="for-who-list">
+                <li>✈️ Para quem vai fazer o <strong>primeiro cruzeiro</strong> e não quer chegar perdido no navio</li>
+                <li>🌊 Para quem está planejando um <strong>cruzeiro transatlântico Europa ↔ Brasil</strong> e quer entender como funciona essa travessia longa</li>
+                <li>😰 Para quem tem <strong>medo de enjoar</strong>, passar mal ou "ficar preso em alto-mar" e quer saber como se preparar</li>
+                <li>💰 Para quem quer <strong>evitar gastos desnecessários</strong> com mala, extras a bordo, internet, excursões e surpresas na fatura</li>
+                <li>👨‍👩‍👧‍👦 Para <strong>famílias, viajantes solo ou casais</strong> que querem aproveitar ao máximo o navio e as paradas com segurança</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- O QUE TEM DENTRO -->
+    <div class="section section-light">
+        <div class="container">
+            <h2>O que você vai encontrar dentro do guia</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🚢 Cruzeiro Transatlântico Explicado</h3>
+                    <p>Quando acontecem as travessias, épocas do ano, principais rotas Brasil → Europa e Europa → Brasil, portos de embarque, desembarque e duração típica.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🗺️ Rotas e Itinerários</h3>
+                    <p>Exemplos práticos de rotas como Brasil → Itália, Brasil → Alemanha, Brasil → Itália via França e diferentes saídas da Europa em direção ao Brasil.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>📄 Documentação Completa</h3>
+                    <p>Passaporte, regras de visto para Europa (Espaço Schengen), seguro viagem obrigatório, comprovantes, além de cuidados com menores e gestantes.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>💵 O que Está Incluído</h3>
+                    <p>Hospedagem, refeições, entretenimento versus bebidas, restaurantes especiais, Wi‑Fi, excursões, spa, passagens aéreas e outros custos extras.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🛏️ Escolha da Cabine Ideal</h3>
+                    <p>Diferença entre cabine interna, externa com janela, varanda e suítes premium, com vantagens, desvantagens e dicas para escolher certo.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🤢 Como Lidar com Enjoos</h3>
+                    <p>O que comer, o que evitar, truques simples e por que 97% dos passageiros não têm problemas em navios modernos.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>✅ Preparativos + Checklist</h3>
+                    <p>Passo a passo do que fazer semanas antes: seguro, check-in, app da companhia, excursões, hospedagem, passagens, câmbio e mais.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🧳 Bagagem Inteligente</h3>
+                    <p>Lista do que levar na bagagem de mão e despachada, com foco em praticidade e evitando excesso.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🎭 Rotina a Bordo</h3>
+                    <p>Como organizar seu dia no navio: alimentação, shows, festas, academia, atividades, pôr do sol e como equilibrar diversão com descanso.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>🏝️ Paradas nos Portos</h3>
+                    <p>Diferença entre excursões oficiais e ir por conta própria, dicas de segurança e planejamento em cada parada.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>📱 Wi‑Fi e Comunicação</h3>
+                    <p>Como funciona o Wi‑Fi a bordo, alternativas com chip internacional e dicas para se comunicar nas paradas.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>❓ FAQ Completo</h3>
+                    <p>Dúvidas sobre visto, segurança, viajar sozinho, trabalhar a bordo, crianças, jantares formais, bebidas e muito mais.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEM GUIA x COM GUIA -->
+    <div class="section section-dark">
+        <div class="container">
+            <h2>Sem guia x Com guia</h2>
+            <div class="comparison">
+                <div class="comparison-col without">
+                    <h3>❌ Sem o guia</h3>
+                    <ul>
+                        <li>Horas perdido em vídeos e comentários soltos na internet</li>
+                        <li>Medo de chegar sem documento ou seguro certo</li>
+                        <li>Dúvida se escolheu a cabine correta</li>
+                        <li>Insegurança com enjoos e dias em alto-mar</li>
+                        <li>Surpresas na fatura com Wi‑Fi, bebidas e gorjetas</li>
+                        <li>Risco de perder o navio nas paradas</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-col with">
+                    <h3>✅ Com o guia</h3>
+                    <ul>
+                        <li>Tudo organizado em um único PDF, passo a passo</li>
+                        <li>Checklists de documentos, mala e preparativos prontos</li>
+                        <li>Clareza sobre cabines, rotas, paradas e rotina</li>
+                        <li>Dicas práticas para aproveitar com calma</li>
+                        <li>Controle financeiro e menos gastos desnecessários</li>
+                        <li>Segurança e confiança em todas as etapas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OFERTA -->
+    <div class="section section-light">
+        <div class="container">
+            <h2>Seu investimento para embarcar preparado</h2>
+            <div class="price-box">
+                <p class="price-original">Valor oficial do guia: R$ 97,90</p>
+                <p class="price-discount">🎟️ Com o cupom ARAGAOLS você tem 60% de desconto</p>
+                <div class="coupon-code">ARAGAOLS</div>
+                <p class="price-final">Você paga apenas R$ 39,16</p>
+                <p style="color: #b8c5d6; margin: 20px 0;">Em uma viagem que custa milhares de reais, investir R$ 39 em informação certa é o atalho para aproveitar o cruzeiro com tranquilidade.</p>
+                <a href="https://pay.kiwify.com.br/IeLX3lp" class="btn-primary">✅ QUERO EMBARCAR PREPARADO E ECONOMIZAR</a>
+            </div>
+
+            <div class="guarantee">
+                <h4>🛡️ Compra 100% Segura</h4>
+                <p style="color: #b8c5d6; margin: 0;">Pagamento processado pela Kiwify com total segurança. Acesso imediato ao PDF após confirmação.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMO FUNCIONA -->
+    <div class="section section-dark">
+        <div class="container">
+            <h2>Como funciona na prática</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>1️⃣ Faça seu pedido</h3>
+                    <p>Clique no botão, será direcionado para o checkout seguro da Kiwify. Use o cupom ARAGAOLS para liberar o desconto de 60%.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>2️⃣ Confirme o pagamento</h3>
+                    <p>Pague com cartão, PIX ou boleto. O sistema da Kiwify é 100% seguro e protegido.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>3️⃣ Receba acesso imediato</h3>
+                    <p>Após confirmação, você recebe o link para baixar o PDF completo do guia no seu e-mail ou área de membros.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>4️⃣ Leia quando quiser</h3>
+                    <p>Acesse no celular, tablet ou computador, quantas vezes precisar. O guia é seu para sempre.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section section-light">
+        <div class="container">
+            <h2>Perguntas frequentes</h2>
+
+            <div class="faq-item">
+                <strong>Esse guia serve só para travessia transatlântica?</strong>
+                <p>Não. Ele é perfeito para travessias Europa ↔ Brasil, mas também ajuda muito em cruzeiros mais curtos, porque cobre documentação, cabines, rotina, mala, dinheiro e muito mais.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Tem informações sobre visto e documentação?</strong>
+                <p>Sim. Há uma seção completa sobre documentos para brasileiros, regras gerais para Europa (Espaço Schengen), seguro viagem obrigatório e cuidados com menores de idade e gestantes.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Vou encontrar checklists prontos?</strong>
+                <p>Sim. O guia tem checklist de preparativos, bagagem de mão, mala despachada e um checklist final antes de embarcar para você só marcar e não esquecer nada.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Tem dicas sobre enjoos e dias em alto-mar?</strong>
+                <p>Sim. Há uma seção inteira explicando como lidar com enjoos: o que comer, o que evitar, truques práticos e por que a maioria das pessoas se adapta bem em navios modernos.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Como funciona o cupom de desconto?</strong>
+                <p>No checkout da Kiwify, haverá um campo para inserir o cupom. Digite ARAGAOLS e clique em aplicar. O desconto de 60% será aplicado automaticamente, reduzindo o valor de R$ 97,90 para R$ 39,16.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Em quanto tempo recebo o guia?</strong>
+                <p>Assim que o pagamento for aprovado (instantâneo para PIX e cartão), você recebe o link de acesso ao PDF por e-mail e pode começar a ler imediatamente.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Posso ler em qualquer dispositivo?</strong>
+                <p>Sim. O guia está em formato PDF e pode ser lido em celular, tablet, computador ou até impresso se você preferir.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-final">
+        <div class="container">
+            <h2>Pronto para embarcar seguro, organizado e sem medo?</h2>
+            <p>
+                Em uma viagem que custa milhares de reais, investir R$ 39 em informação certa 
+                é o atalho para aproveitar o cruzeiro com tranquilidade, evitando perrengues e gastos desnecessários.
+            </p>
+            <p style="font-size: 1.1rem; color: #00ffa3; font-weight: 600; margin-bottom: 25px;">
+                Use o cupom <strong>ARAGAOLS</strong> e garanta 60% de desconto
+            </p>
+            <a href="https://pay.kiwify.com.br/IeLX3lp" class="btn-primary">🚢 SIM! QUERO MEU GUIA COM 60% OFF (ÚLTIMAS VAGAS)</a>
+            <p style="font-size: 0.9rem; color: #7a8599; margin-top: 15px;">
+                ⚡ Mais de 500 pessoas já garantiram • Restam apenas <strong style="color: #ff4757;">12 vagas</strong> com desconto
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
